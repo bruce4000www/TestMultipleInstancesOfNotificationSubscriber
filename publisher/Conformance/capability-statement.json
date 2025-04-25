@@ -1,0 +1,84 @@
+{
+  "resourceType": "CapabilityStatement",
+  "status": "active",
+  "date": "2025-04-25T14:56:43+08:00",
+  "kind": "capability",
+  "fhirVersion": "4.3.0",
+  "format": [
+    "application/fhir+json",
+    "json"
+  ],
+  "rest": [
+    {
+      "mode": "server",
+      "resource": [
+        {
+          "type": "CapabilityStatement",
+          "interaction": [
+            {
+              "code": "read",
+              "documentation": "Returns the Capability Statement."
+            }
+          ],
+          "versioning": "no-version"
+        },
+        {
+          "type": "OperationDefinition",
+          "interaction": [
+            {
+              "code": "read",
+              "documentation": "Returns the Operation Definition."
+            }
+          ],
+          "versioning": "no-version"
+        },
+        {
+          "type": "SearchParameter",
+          "interaction": [
+            {
+              "code": "read",
+              "documentation": "Returns the Search Parameter."
+            }
+          ],
+          "versioning": "no-version"
+        },
+        {
+          "type": "StructureDefinition",
+          "interaction": [
+            {
+              "code": "read",
+              "documentation": "Returns the Structure Definition."
+            }
+          ],
+          "versioning": "no-version"
+        },
+        {
+          "type": "Organization",
+          "interaction": [
+            {
+              "code": "create",
+              "documentation": "Create Organization."
+            },
+            {
+              "code": "update",
+              "documentation": "Update Organization."
+            },
+            {
+              "code": "patch",
+              "documentation": "Patch Organization."
+            },
+            {
+              "code": "search-type",
+              "documentation": "Search Organization."
+            },
+            {
+              "code": "history-type",
+              "documentation": "History of Organization."
+            }
+          ],
+          "versioning": "versioned"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "UseFhirController": false,
+  "SystemPlugins": {
+    "HealthCheck": {
+      "Detailed": true
+    },
+    "Metadata": "Conformance",
+    "Merge": true,
+    "Validate": true,
+    "Authentication": "NotificationPublisher.Security.HeadersAuthenticationHandler",
+    "MassTransitAsyncHandlers": { // Notification plugin section
+      "VirtualPublisher": { // Configure publisher for its topic
+        "ResourceQueueMap": {
+          "Organization": [ "OrganizationConsumer" ]
+        },
+        "IsPublish": true
+      },
+      "MessageAudit": { // Enable notification audit feature, it is optional section
+        "ApplySqlRelationalModels": true,
+        "ConnectionString": "FhirAsyncAudit",
+        "RelationalSettings": {
+          "AutoCreateTables": true
+        }
+      },
+      "DbInboxOutbox": { // Enable notification transactional outbox pattern, it is optional section
+        "UseSqlServer": {
+          "ConnectionString": "FhirAsyncOutbox",
+          "RelationalSettings": {
+            "AutoCreateTables": true
+          }
+        },
+        "UseBusOutbox": true
+      },
+      "UsingAmazonSqs": { // Configure Amazon SQS
+        "AwsRegion": {
+          "Region": "ap-southeast-1"
+        }
+      }
+    }
+  },
+  "Handlers": {
+    "Repository": {
+      "FhirDataStore<@Notification>": {
+        "UseSqlDocument": {
+          "EnableRetryOnFailure": true,
+          "Migration": {
+            "DeployDatabase": true,
+            "CreateNewDatabase": true
+          }
+        },
+        "IncludeStandardSearchParams": true,
+        "ConnectionString": "OrganizationDb",
+        "AcceptedTypes": [
+          "Organization"
+        ]
+      }
+    }
+  }
+}

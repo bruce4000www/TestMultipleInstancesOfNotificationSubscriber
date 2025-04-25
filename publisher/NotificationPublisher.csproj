@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <IhisFhirEngineVersion>4.3.1-beta-4.3.1-25112.2</IhisFhirEngineVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Ihis.FhirEngine.Data.SqlServer" Version="$(IhisFhirEngineVersion)" />
+    <PackageReference Include="Ihis.FhirEngine.Data.Relational.SqlServer" Version="$(IhisFhirEngineVersion)" />
+    <PackageReference Include="Ihis.FhirEngine.Data.SqlServer.Extensions.Migration" Version="$(IhisFhirEngineVersion)" />
+    <PackageReference Include="Ihis.FhirEngine.WebApi.R4" Version="$(IhisFhirEngineVersion)" />
+    <PackageReference Include="Ihis.FhirEngine.Extensions.AsyncHandlers.MassTransit.AmazonSQS" Version="$(IhisFhirEngineVersion)" />
+  </ItemGroup>
+
+</Project>

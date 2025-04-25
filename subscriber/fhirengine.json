@@ -1,0 +1,45 @@
+{
+  "EnableHandlerAutoRegistration": true,
+  "UseFhirController": false,
+  "SystemPlugins": {
+    "HealthCheck": {
+      "Detailed": true
+    },
+    "Metadata": "Conformance",
+    "Merge": true,
+    "Validate": true,
+    "Authentication": "NotificationSubscriber.Security.HeadersAuthenticationHandler",
+    "MassTransitAsyncHandlers": {
+      "ConsumerEndpoint": {
+        "PrefetchCount": 1
+      },
+      "MessageAudit": {
+        "ApplySqlRelationalModels": true,
+        "ConnectionString": "FhirAsyncAudit"
+      },
+      "UsingAmazonSqs": {
+        "AwsRegion": {
+          "Region": "ap-southeast-1"
+        }
+      }
+    }
+  },
+  "Handlers": {
+    "Repository": {
+      "FhirDataStore<@Notification>": {
+        "UseSqlDocument": {
+          "EnableRetryOnFailure": true,
+          "Migration": {
+            "DeployDatabase": true,
+            "CreateNewDatabase": true
+          }
+        },
+        "IncludeStandardSearchParams": true,
+        "ConnectionString": "OrganizationDb",
+        "AcceptedTypes": [
+          "Organization"
+        ]
+      }
+    }
+  }
+}

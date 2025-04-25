@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json.schemastore.org/launchsettings.json",
+  "profiles": {
+    "NotificationSubscriber": {
+      "commandName": "Project",
+      "applicationUrl": "https://localhost:9902",
+      "dotnetRunMessages": true
+    }
+  }
+}

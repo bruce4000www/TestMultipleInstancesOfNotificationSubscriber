@@ -1,0 +1,45 @@
+{
+  "ShowExceptionDetails": true,
+  "SystemPlugins": {
+    "PhysicalFileAlwaysEncryptedKeyProvider": {
+      "CertificateData": [
+        "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|helloworld123"
+      ]
+    },
+    "PopHealthAuthentication": {
+      "AutoCreateTables": true
+    },
+    "MassTransitAsyncHandlers": {
+      "ConsumerEndpoint": {
+        "Disabled": [
+          ""
+        ]
+      },
+      "MessageAudit": {
+        "RelationalSettings": {
+          "AutoCreateTables": true
+        }
+      },
+      "UsingAmazonSqs": {
+        "UseMessageRetry": {
+          "Intervals": [ "00:00:05" ],
+          "Ignore": [
+            "Ihis.PopHealth.CommonNotificationApi.Exceptions.NotificationSkipRetryException"
+          ]
+        },
+        "UseDelayedRedelivery": {
+          "Intervals": [ "00:00:10" ],
+          "Ignore": [
+            "Ihis.PopHealth.CommonNotificationApi.Exceptions.NotificationSkipRetryException"
+          ]
+        },
+        "TopicName": {
+          "Prefix": "Dev_"
+        }
+      },
+      "ConfigureMessageQueue": {
+        "QueueNamePrefix": "Dev_"
+      }
+    }
+  }
+}
