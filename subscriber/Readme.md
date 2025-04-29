@@ -53,7 +53,7 @@ services:
       database:
         condition: service_healthy
     extra_hosts:
-      - "host.docker.internal:172.17.0.1"
+      - "host.docker.internal:host-gateway"
   subscriber1:
     image: 'notification/subscriber'
     container_name: notification_subscriber1
@@ -72,7 +72,7 @@ services:
       publisher:
         condition: service_healthy
     extra_hosts:
-      - "host.docker.internal:172.17.0.1"
+      - "host.docker.internal:host-gateway"
   subscriber2:
     image: 'notification/subscriber'
     container_name: notification_subscriber2
@@ -91,7 +91,7 @@ services:
       publisher:
         condition: service_healthy
     extra_hosts:
-      - "host.docker.internal:172.17.0.1"
+      - "host.docker.internal:host-gateway"
   subscriber3:
     image: 'notification/subscriber'
     container_name: notification_subscriber3
@@ -110,7 +110,7 @@ services:
       publisher:
         condition: service_healthy
     extra_hosts:
-      - "host.docker.internal:172.17.0.1"
+      - "host.docker.internal:host-gateway"
   subscriber4:
     image: 'notification/subscriber'
     container_name: notification_subscriber4
@@ -129,7 +129,7 @@ services:
       publisher:
         condition: service_healthy
     extra_hosts:
-      - "host.docker.internal:172.17.0.1"
+      - "host.docker.internal:host-gateway"
   subscriber5:
     image: 'notification/subscriber'
     container_name: notification_subscriber5
@@ -148,7 +148,7 @@ services:
       publisher:
         condition: service_healthy
     extra_hosts:
-      - "host.docker.internal:172.17.0.1"
+      - "host.docker.internal:host-gateway"
   subscriber6:
     image: 'notification/subscriber'
     container_name: notification_subscriber6
@@ -167,7 +167,7 @@ services:
       publisher:
         condition: service_healthy
     extra_hosts:
-      - "host.docker.internal:172.17.0.1"
+      - "host.docker.internal:host-gateway"
   subscriber7:
     image: 'notification/subscriber'
     container_name: notification_subscriber7
@@ -186,7 +186,7 @@ services:
       publisher:
         condition: service_healthy
     extra_hosts:
-      - "host.docker.internal:172.17.0.1"
+      - "host.docker.internal:host-gateway"
 ```
 Note: replace `YOUR_AWS_KEY_ID` and `YOUR_AWS_KEY_VALUE` with actual value.
 
